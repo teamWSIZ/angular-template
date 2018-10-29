@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from "../model/user";
-import {UserdataserviceService} from "../userdataservice.service";
+import {User} from '../model/user';
+import {UserdataserviceService} from '../userdataservice.service';
 
 @Component({
   selector: 'app-datatable',
@@ -8,21 +8,21 @@ import {UserdataserviceService} from "../userdataservice.service";
   styleUrls: ['./datatable.component.css']
 })
 export class DatatableComponent implements OnInit {
-  users : User[];
-  selectedUser : User;
+  users: User[];
+  selectedUser: User;
 
-  constructor(private userdataService : UserdataserviceService) { }
+  constructor(private userdataService: UserdataserviceService) { }
 
   ngOnInit() {
     this.loadUsers();
   }
 
-  loadUsers() : void {
+  loadUsers(): void {
     this.userdataService.getUsers()
-      .subscribe(json => this.users = json.slice(1,12));
+      .subscribe(json => this.users = json.slice(1, 12));
   }
 
-  onSelect(u: User) : void {
+  onSelect(u: User): void {
     this.selectedUser = u;
   }
 }

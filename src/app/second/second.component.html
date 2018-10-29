@@ -1,0 +1,20 @@
+<div>
+  <!--ngModel == what will be set finally by done selection -->
+  <select [(ngModel)]="selectedUser">
+    <option *ngFor="let u of users" [ngValue]="u">{{u.name}}</option>
+  </select>
+</div>
+Selected is: `{{selectedUser.name + ', id=' + selectedUser.id}}`
+
+<div class="card" *ngIf="selectedUser!=undefined">
+  <div class="card-header bg-info text-white">
+    <span class=" ">Edit user</span>
+  </div>
+  <div class="card-body">
+    <input class="narrow8" [(ngModel)]="selectedUser.name">
+    <input class="narrow8" [(ngModel)]="selectedUser.id">
+    <select [(ngModel)]="selectedUser.id">
+      <option *ngFor="let c of cats" [ngValue]="c.id">{{c.catname + ' -> ' + c.id}}</option>
+    </select>
+  </div>
+</div>

@@ -6,10 +6,12 @@ import {TopbarComponent} from './topbar/topbar.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {DatatableComponent} from './datatable/datatable.component';
 import {EdituserComponent} from './edituser/edituser.component';
-import {FormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { NowyComponent } from './nowy/nowy.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { SecondComponent } from './second/second.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { NowyComponent } from './nowy/nowy.component';
     DatatableComponent,
     EdituserComponent,
     LoginComponent,
-    NowyComponent
+    NowyComponent,
+    SecondComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
