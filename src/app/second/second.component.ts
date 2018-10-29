@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserdataserviceService} from '../userdataservice.service';
 import {User} from '../model/user';
-import {Cat} from '../model/cat';
+import {Category} from '../model/category';
 
 @Component({
   selector: 'app-second',
@@ -11,7 +11,7 @@ import {Cat} from '../model/cat';
 export class SecondComponent implements OnInit {
   users: User[];
   selectedUser: User;
-  cats: Cat[];
+  cats: Category[];
 
   constructor(
     private dataservice: UserdataserviceService) {}
