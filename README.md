@@ -1,5 +1,10 @@
 # A7Template
 
+
+
+
+
+
 ## Instalacja:
 
 - zainstalować node.js (ściągnąć z oficjalnej strony; ver 8)

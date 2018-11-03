@@ -1,20 +1,59 @@
-<div>
-  <!--ngModel == what will be set finally by done selection -->
-  <select [(ngModel)]="selectedUser">
-    <option *ngFor="let u of users" [ngValue]="u">{{u.name}}</option>
-  </select>
-</div>
-Selected is: `{{selectedUser.name + ', id=' + selectedUser.id}}`
+<div class="row">
+  <div class="col-sm-4 boxed">
+  </div>
 
-<div class="card" *ngIf="selectedUser!=undefined">
-  <div class="card-header bg-info text-white">
-    <span class=" ">Edit user</span>
+  <div class="col-sm-4 boxed">
+    <div class="card card-header bg-info">
+      Chat admin
+    </div>
+    <div class="card-body">
+      <div class="card-body">
+
+        <div>
+          <div class="narrow8">Nowy użytkownik</div>
+          <input class="narrow8" placeholder="userid" [(ngModel)]="user.nick">
+          <input class="narrow8" readonly placeholder="passwd" [(ngModel)]="user.pass">
+          <button class="btn btn-info" (click)="createUser()">Utwórz</button>
+        </div>
+
+        <div>
+          <div class="narrow8">Nowy chat</div>
+          <input class="narrow8" placeholder="nazwa pokoju"
+                 [(ngModel)]="newroomid">
+          <button class="btn btn-info" (click)="createRoom()">Utwórz</button>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="card-footer">
+
+    </div>
   </div>
-  <div class="card-body">
-    <input class="narrow8" [(ngModel)]="selectedUser.name">
-    <input class="narrow8" [(ngModel)]="selectedUser.id">
-    <select [(ngModel)]="selectedUser.id">
-      <option *ngFor="let c of cats" [ngValue]="c.id">{{c.catname + ' -> ' + c.id}}</option>
-    </select>
-  </div>
+
+  <!--<div class="col-sm-4 boxed">-->
+    <!--<div>-->
+      <!--&lt;!&ndash;ngModel == what will be set finally by done selection &ndash;&gt;-->
+      <!--<select [(ngModel)]="selectedUser">-->
+        <!--<option *ngFor="let u of users" [ngValue]="u">{{u.name}}</option>-->
+      <!--</select>-->
+    <!--</div>-->
+    <!--Selected is: `{{selectedUser.name + ', id=' + selectedUser.id}}`-->
+
+    <!--<div class="card" *ngIf="selectedUser!=undefined">-->
+      <!--<div class="card-header bg-info text-white">-->
+        <!--<span class=" ">Edit user</span>-->
+      <!--</div>-->
+      <!--<div class="card-body">-->
+        <!--<input class="narrow8" [(ngModel)]="selectedUser.name">-->
+        <!--<input class="narrow8" [(ngModel)]="selectedUser.id">-->
+        <!--<select [(ngModel)]="selectedUser.id">-->
+          <!--<option *ngFor="let c of cats" [ngValue]="c.id">{{c.catname + ' -> ' + c.id}}</option>-->
+        <!--</select>-->
+      <!--</div>-->
+    <!--</div>-->
+
+  <!--</div>-->
+
 </div>
+
