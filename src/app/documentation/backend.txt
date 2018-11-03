@@ -1,0 +1,21 @@
+
+# user create:
+http://10.10.0.55:8086/users/create?nick=cobra
+
+# room create:
+http://10.10.0.55:8086/rooms/create?roomid=a
+
+# messages from room:
+http://10.10.0.55:8086/rooms/messages?roomid=a
+
+# create message (POST request, dane w body):
+http://10.10.0.55:8086/rooms/messages
+
+# update message (PUT request, dane w body):
+http://10.10.0.55:8086/rooms/messages
+
+# delete message (DELETE request)
+http://10.10.0.55:8086/rooms/messages?messageId=3
+
+
+
