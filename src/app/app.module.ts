@@ -12,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { NowyComponent } from './nowy/nowy.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { SecondComponent } from './second/second.component';
+import { NewmessageComponent } from './newmessage/newmessage.component';
+import { MessagebrowserComponent } from './messagebrowser/messagebrowser.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SecondComponent } from './second/second.component';
     EdituserComponent,
     LoginComponent,
     NowyComponent,
-    SecondComponent
+    SecondComponent,
+    NewmessageComponent,
+    MessagebrowserComponent
   ],
   imports: [
     BrowserModule,
