@@ -12,8 +12,9 @@ import { LoginComponent } from './login/login.component';
 import { NowyComponent } from './nowy/nowy.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { SecondComponent } from './second/second.component';
-import { NewmessageComponent } from './newmessage/newmessage.component';
 import { MessagebrowserComponent } from './messagebrowser/messagebrowser.component';
+import { AdminpanelComponent } from './adminpanel/adminpanel.component';
+import { RoombrowseComponent } from './roombrowse/roombrowse.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,9 @@ import { MessagebrowserComponent } from './messagebrowser/messagebrowser.compone
     LoginComponent,
     NowyComponent,
     SecondComponent,
-    NewmessageComponent,
-    MessagebrowserComponent
+    MessagebrowserComponent,
+    AdminpanelComponent,
+    RoombrowseComponent
   ],
   imports: [
     BrowserModule,

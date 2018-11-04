@@ -1,40 +1,19 @@
 <div class="row">
-  <div class="col-sm-4 boxed">
-    <app-messagebrowser></app-messagebrowser>
+  <div class="col-sm-2 boxed">
+    <app-roombrowse [selection]="selection"></app-roombrowse>
   </div>
 
-  <div class="col-sm-4 boxed">
-    <div class="card card-header bg-info">
-      Chat admin
-    </div>
-    <div class="card-body">
-      <div class="card-body">
 
-        <div>
-          <div class="narrow8">Nowy użytkownik</div>
-          <input class="narrow8" placeholder="userid" [(ngModel)]="user.nick">
-          <input class="narrow8" readonly placeholder="passwd" [(ngModel)]="user.pass">
-          <button class="btn btn-info" (click)="createUser()">Utwórz</button>
-        </div>
-
-        <div>
-          <div class="narrow8">Nowy chat</div>
-          <input class="narrow8" placeholder="nazwa pokoju"
-                 [(ngModel)]="newroomid">
-          <button class="btn btn-info" (click)="createRoom()">Utwórz</button>
-        </div>
-
-      </div>
-
-    </div>
-    <div class="card-footer">
-
-    </div>
+  <div class="col-sm-7 boxed">
+    <app-messagebrowser [selection]="selection"></app-messagebrowser>
   </div>
 
-  <div class="col-sm-4 boxed">
-    <app-newmessage></app-newmessage>
+
+  <div class="col-sm-3 boxed">
+    <app-adminpanel></app-adminpanel>
+
   </div>
+
 
   <!--<div class="col-sm-4 boxed">-->
     <!--<div>-->
