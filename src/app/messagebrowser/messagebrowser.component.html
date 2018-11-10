@@ -16,7 +16,8 @@
       <thead>
       <tr>
         <th width="20%"> </th>
-        <th width="80%"> </th>
+        <th width="70%"> </th>
+        <th width="10%"> </th>
       </tr>
 
       </thead>
@@ -24,6 +25,11 @@
       <tr *ngFor="let m of messages">
         <td>{{m.authorNick}}: </td>
         <td>{{m.content}}</td>
+        <td>
+          <span class="far fa-thumbs-up" (click)="upvote(m)"></span>
+          &nbsp;
+          <span class="far fa-thumbs-down"></span>
+        </td>
       </tr>
       </tbody>
     </table>

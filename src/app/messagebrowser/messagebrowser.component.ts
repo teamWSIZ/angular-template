@@ -52,4 +52,8 @@ export class MessagebrowserComponent implements OnInit {
         this.newmessagecontent = '';
       })
   }
+
+  upvote(m: Message) {
+    console.log('Message ' + m.content + ' got upvoted');
+  }
 }
