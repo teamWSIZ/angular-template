@@ -13,8 +13,8 @@ export class SecondComponent implements OnInit {
   // selectedUser: User;
   // cats: Category[];
 
-  //shared with children
-  @Input() selection= new Sel();
+  // shared with children
+  @Input() selection = new Sel();
 
 
 

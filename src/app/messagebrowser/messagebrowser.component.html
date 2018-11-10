@@ -23,7 +23,7 @@
       </thead>
       <tbody>
       <tr *ngFor="let m of messages">
-        <td>{{m.authorNick}}: </td>
+        <td>{{m.authorNick}} <span class="text-muted"> ({{m.created | date:'EEE H:m' }})</span> </td>
         <td>{{m.content}}</td>
         <td>
           <span class="far fa-thumbs-up" (click)="upvote(m)"></span>
