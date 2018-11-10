@@ -3,6 +3,7 @@ import {Sel} from '../model/sel';
 import {GlobalService} from '../global.service';
 import {HttpClient} from '@angular/common/http';
 import {Message} from '../model/message';
+import {interval, Observable} from 'rxjs';
 
 @Component({
   selector: 'app-messagebrowser',
@@ -20,6 +21,12 @@ export class MessagebrowserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    //todo: periodyczne odświeżanie zawartości wiadomości w pokoju
+    //todo: dodać do wiadomości "timestamp"
+    //todo: weryfikacja userów przy wysyłaniu message'y
+    //todo: wysyłanie obrazków : user
+
+
   }
 
 
@@ -42,6 +49,7 @@ export class MessagebrowserComponent implements OnInit {
     this.http.post(url, msg)
       .subscribe(value => {
         this.reload();
+        this.newmessagecontent = '';
       })
   }
 }

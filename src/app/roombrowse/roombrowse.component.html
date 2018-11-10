@@ -1,17 +1,24 @@
 <div class="narrow8">Aktywny</div>
-<input class="narrow8" placeholder="roomid" [(ngModel)]="selection.room">
+<input class="narrow2" placeholder="roomid" [(ngModel)]="selection.room">
+
+
+{{nazwa}}
 
 <table class="table table-hover table-sm">
   <thead>
   <tr>
-    <th width="100%"> Pokój</th>
+    <th width="100%" > Pokój</th>
+    <button class="btn btn-sm btn-primary" (click)="reloadRooms()">
+      reload
+    </button>
   </tr>
 
   </thead>
   <tbody>
   <!--add: user selection => edit field -->
-  <tr *ngFor="let r of roomService.rooms" (click)="selection.room=r" class="clickable">
-    <td>{{r}}</td>
+  <tr *ngFor="let r of roomService.rooms"
+      (click)="selection.room=r.id" class="clickable">
+    <td>{{r.id}}</td>
   </tr>
   </tbody>
 </table>

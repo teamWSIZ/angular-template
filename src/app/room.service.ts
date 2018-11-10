@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Room} from './model/room';
 
 /**
  * Publiczne metody i dane tego serwisu pozwalają na bezpośrednie podłączenie klientów.
@@ -8,12 +9,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class RoomService {
-  public rooms=[];
+  public rooms: Room[];
 
   constructor() { }
 
   public addRoom(roomid : string) {
-    this.rooms.push(roomid);
+    let nowa = new Room();
+    nowa.id = roomid;
+    this.rooms.push(nowa);
+  }
+
+  public reliadRooms() {
+
   }
 
 }

@@ -29,14 +29,16 @@ export class AdminpanelComponent implements OnInit {
   createUser(username : string) {
     const url = this.host + '/users/create?nick=' + username;
     this.http.get<Person>(url)
-      .subscribe(data=>{
+      .subscribe(data => {
         this.user = data;
-        this.message= 'Utworzono użytkownika ' + username + ' hasło:' + this.user.pass;
-        setTimeout(()=>{this.message=''}, 10000);  //message zniknie za 5 sekund
-      }, ()=>{
-        this.message= 'Błąd tworzenia użytkownika';
-        setTimeout(()=>this.message='',3000);
-      })
+        this.message = 'Utworzono użytkownika ' + username + ' hasło:' + this.user.pass;
+        setTimeout(() => {
+          this.message = '';
+        }, 10000);  //message zniknie za 5 sekund
+      }, () => {
+        this.message = 'Błąd tworzenia użytkownika';
+        setTimeout(() => this.message = '', 3000);
+      });
   }
 
   createRoom(roomname : string) {
