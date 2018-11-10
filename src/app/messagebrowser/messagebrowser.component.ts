@@ -21,16 +21,21 @@ export class MessagebrowserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    //todo: periodyczne odświeżanie zawartości wiadomości w pokoju
+    //done: periodyczne odświeżanie zawartości wiadomości w pokoju
     //todo: dodać do wiadomości "timestamp"
     //todo: weryfikacja userów przy wysyłaniu message'y
     //todo: wysyłanie obrazków : user
 
+    interval(10000).subscribe(() => {
+      this.reload();
+    });
 
   }
 
 
+  //Wczytuje (wszystkie) wiadomości od nowa
   reload() {
+    console.log('Reloading messages');
     let url = this.global.host + "/rooms/messages?roomid=" + this.selection.room;
     this.http.get<Message[]>(url)
       .subscribe(value => {
