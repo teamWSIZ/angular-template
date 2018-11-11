@@ -12,7 +12,7 @@ import {SecondComponent} from '../second/second.component';
 const myroutes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'second', component: SecondComponent},
-  {path: '', redirectTo: '/dashboard', pathMatch: 'full'}
+  {path: '', redirectTo: '/second', pathMatch: 'full'}
 ];
 
 
