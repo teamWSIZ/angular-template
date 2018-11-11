@@ -1,0 +1,22 @@
+<div class="card card-header bg-info text-white">
+  Logowanie
+</div>
+<div class="card">
+  <div class="card-body">
+
+    <div>
+      <input type="text" class="narrow8" placeholder="nick" [(ngModel)]="user.nick">
+      <input type="password" class="narrow8" placeholder="pass" [(ngModel)]="user.pass">
+      <button class="btn btn-success">Zaloguj</button>
+      <!--<input ng2FileSelect type="file" accept=".xml" [uploader]="uploader"/>-->
+      <input type="file" ng2FileSelect [uploader]="uploader" />
+
+    </div>
+
+
+  </div>
+  <div class="card-footer">
+    <span> > {{message}}</span>
+  </div>
+
+</div>

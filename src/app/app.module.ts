@@ -14,6 +14,7 @@ import { MessagebrowserComponent } from './messagebrowser/messagebrowser.compone
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { RoombrowserComponent } from './roombrowser/roombrowser.component';
 import { UserLoginComponent } from './user-login/user-login.component';
+import {FileSelectDirective} from 'ng2-file-upload';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UserLoginComponent } from './user-login/user-login.component';
     MessagebrowserComponent,
     AdminpanelComponent,
     RoombrowserComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,

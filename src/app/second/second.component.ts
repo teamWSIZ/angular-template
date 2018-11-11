@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UserdataserviceService} from '../userdataservice.service';
 import {HttpClient} from '@angular/common/http';
 import {Sel} from '../model/sel';
 
@@ -19,7 +18,6 @@ export class SecondComponent implements OnInit {
 
 
   constructor(
-    private dataservice: UserdataserviceService,
     private http: HttpClient) {}
 
   ngOnInit() {

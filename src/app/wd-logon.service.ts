@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {User} from './model/user';
 import {Md5} from "ts-md5";
 
 @Injectable({
