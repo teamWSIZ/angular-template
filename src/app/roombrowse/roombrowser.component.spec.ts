@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RoombrowseComponent } from './roombrowse.component';
+import { RoombrowserComponent } from './roombrowser.component';
 
-describe('RoombrowseComponent', () => {
-  let component: RoombrowseComponent;
-  let fixture: ComponentFixture<RoombrowseComponent>;
+describe('RoombrowserComponent', () => {
+  let component: RoombrowserComponent;
+  let fixture: ComponentFixture<RoombrowserComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RoombrowseComponent ]
+      declarations: [ RoombrowserComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RoombrowseComponent);
+    fixture = TestBed.createComponent(RoombrowserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

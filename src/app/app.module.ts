@@ -14,7 +14,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { SecondComponent } from './second/second.component';
 import { MessagebrowserComponent } from './messagebrowser/messagebrowser.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
-import { RoombrowseComponent } from './roombrowse/roombrowse.component';
+import { RoombrowserComponent } from './roombrowse/roombrowser.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { RoombrowseComponent } from './roombrowse/roombrowse.component';
     SecondComponent,
     MessagebrowserComponent,
     AdminpanelComponent,
-    RoombrowseComponent
+    RoombrowserComponent
   ],
   imports: [
     BrowserModule,

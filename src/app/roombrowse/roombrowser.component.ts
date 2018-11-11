@@ -7,26 +7,22 @@ import {HttpClient} from '@angular/common/http';
 import {Room} from '../model/room';
 
 @Component({
-  selector: 'app-roombrowse',
-  templateUrl: './roombrowse.component.html',
-  styleUrls: ['./roombrowse.component.css']
+  selector: 'app-roombrowser',
+  templateUrl: './roombrowser.component.html',
+  styleUrls: ['./roombrowser.component.css']
 })
-export class RoombrowseComponent implements OnInit {
-  @Input() selection : Sel;
-  nazwa : string;
-  host : string;
+export class RoombrowserComponent implements OnInit {
+  @Input() selection: Sel;
+  nazwa: string;
+  host: string;
 
   constructor(
-    public roomService : RoomService,
-    public global : GlobalService,
-    public http : HttpClient) { }
+    public roomService: RoomService,
+    public global: GlobalService,
+    public http: HttpClient) { }
 
   ngOnInit() {
     this.host = this.global.host;
-  }
-
-  selectRoom(r: string) {
-    this.selection
   }
 
   roomClicked() {
