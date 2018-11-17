@@ -13,7 +13,6 @@ import {Room} from '../model/room';
 })
 export class RoombrowserComponent implements OnInit {
   @Input() selection: Sel;
-  nazwa: string;
   host: string;
 
   constructor(

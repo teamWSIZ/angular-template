@@ -11,32 +11,31 @@ import {interval, Observable} from 'rxjs';
   styleUrls: ['./messagebrowser.component.css']
 })
 export class MessagebrowserComponent implements OnInit {
-  @Input() selection : Sel;
-  messages : Message[];
+  @Input() selection: Sel;
+  messages: Message[];
   newmessagecontent: string;
 
   constructor(
-    private global : GlobalService,
-    private http : HttpClient
+    private global: GlobalService,
+    private http: HttpClient
   ) { }
 
   ngOnInit() {
-    //done: periodyczne odświeżanie zawartości wiadomości w pokoju
-    //todo: dodać do wiadomości "timestamp"
-    //todo: weryfikacja userów przy wysyłaniu message'y
-    //todo: wysyłanie obrazków : user
+    // done: periodyczne odświeżanie zawartości wiadomości w pokoju
+    // done: dodać do wiadomości "timestamp"
+    // todo: weryfikacja userów przy wysyłaniu message'y
+    // done: wysyłanie obrazków : user
 
     interval(10000).subscribe(() => {
       this.reload();
     });
-
   }
 
 
-  //Wczytuje (wszystkie) wiadomości od nowa
+  // Wczytuje (wszystkie) wiadomości od nowa
   reload() {
     console.log('Reloading messages');
-    let url = this.global.host + "/rooms/messages?roomid=" + this.selection.room;
+    const url = this.global.host + '/rooms/messages?roomid=' + this.selection.room;
     this.http.get<Message[]>(url)
       .subscribe(value => {
         this.messages = value;
@@ -44,7 +43,7 @@ export class MessagebrowserComponent implements OnInit {
   }
 
   sendMessage() {
-    const url = this.global.host + "/rooms/messages";
+    const url = this.global.host + '/rooms/messages';
     const msg = new Message();
     msg.authorNick = this.selection.user;
     msg.content = this.newmessagecontent;
@@ -55,7 +54,7 @@ export class MessagebrowserComponent implements OnInit {
       .subscribe(value => {
         this.reload();
         this.newmessagecontent = '';
-      })
+      });
   }
 
   upvote(m: Message) {

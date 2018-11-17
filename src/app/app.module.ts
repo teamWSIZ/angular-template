@@ -7,9 +7,8 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
-import { NowyComponent } from './nowy/nowy.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { SecondComponent } from './second/second.component';
+import { ChatViewComponent } from './chat/chat-view.component';
 import { MessagebrowserComponent } from './messagebrowser/messagebrowser.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { RoombrowserComponent } from './roombrowser/roombrowser.component';
@@ -22,8 +21,7 @@ import {FileSelectDirective} from 'ng2-file-upload';
     TopbarComponent,
     DashboardComponent,
     LoginComponent,
-    NowyComponent,
-    SecondComponent,
+    ChatViewComponent,
     MessagebrowserComponent,
     AdminpanelComponent,
     RoombrowserComponent,

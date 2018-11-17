@@ -4,10 +4,10 @@ import {Sel} from '../model/sel';
 
 @Component({
   selector: 'app-second',
-  templateUrl: './second.component.html',
-  styleUrls: ['./second.component.css']
+  templateUrl: './chat-view.component.html',
+  styleUrls: ['./chat-view.component.css']
 })
-export class SecondComponent implements OnInit {
+export class ChatViewComponent implements OnInit {
   // users: User[];
   // selectedUser: User;
   // cats: Category[];

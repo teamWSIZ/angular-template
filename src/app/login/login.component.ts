@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {WdLogonService} from "../wd-logon.service";
+import {WdLogonService} from '../wd-logon.service';
 
 @Component({
   selector: 'app-login',
@@ -7,11 +7,11 @@ import {WdLogonService} from "../wd-logon.service";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  title = "Logowanie do WD";
+  title = 'Logowanie do WD';
   user = '';
   pass = '';
 
-  constructor( private logonService : WdLogonService) { }
+  constructor( private logonService: WdLogonService) { }
 
   ngOnInit() {
 
