@@ -7,14 +7,14 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { QComponent } from './q/q.component';
+import { NowyComponent } from './nowy/nowy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopbarComponent,
     DashboardComponent,
-    QComponent
+    NowyComponent
   ],
   imports: [
     BrowserModule,
