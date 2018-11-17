@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from '../dashboard/dashboard.component';
-import {ChatViewComponent} from '../chat/chat-view.component';
 
 /**
  * Generation by:
@@ -11,7 +10,7 @@ import {ChatViewComponent} from '../chat/chat-view.component';
 
 const myroutes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'chat', component: ChatViewComponent},
+  {path: 'chat', component: DashboardComponent},
   {path: '', redirectTo: '/chat', pathMatch: 'full'}
 ];
 
