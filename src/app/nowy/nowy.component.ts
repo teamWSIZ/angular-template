@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {ExecResponse} from '../model/execResponse';
 
 @Component({
   selector: 'app-nowy',
@@ -16,10 +17,11 @@ export class NowyComponent implements OnInit {
 
   getLista() {
     console.log('ściągam listę');
-    const url = 'http://localhost:8086/execute?com=ps ax'; //lub tasklist
-    this.http.get<string[]>(url)
+    const url = 'https://10.10.11.12:8443/execute?' +
+      'com=ps ax&pass=verysecret'; //lub tasklist
+    this.http.get<ExecResponse>(url)
       .subscribe(value => {
-        this.wynik = value.out;
+        // this.wynik = value.out;
       });
   }
 }
