@@ -9,6 +9,7 @@ import {ExecResponse} from '../model/execResponse';
 })
 export class NowyComponent implements OnInit {
   wynik = [""];
+  imageUrl = 'thumbnailUrl": "https://via.placeholder.com/150/92c952';
 
   constructor(private http: HttpClient) { }
 
@@ -21,7 +22,7 @@ export class NowyComponent implements OnInit {
       'com=ps ax&pass=verysecret'; //lub tasklist
     this.http.get<ExecResponse>(url)
       .subscribe(value => {
-        // this.wynik = value.out;
+        this.wynik = value.out;
       });
   }
 }

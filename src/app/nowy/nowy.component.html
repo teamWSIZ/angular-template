@@ -2,13 +2,23 @@
   <div class="card-header h5">
     Zdalne wykonanie komend na serwerze 10.10.11.12
   </div>
+  <img [src]="imageUrl">
   <div class="card-body">
     <div>
       <button class="btn btn-primary" (click)="getLista()">Lista procesów</button>
     </div>
-    <div class="boxed">
-      {{wynik}}
-    </div>
+    <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+        <th class="w-100">Proces</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let linia of wynik">
+        {{linia.trim()}}
+      </tr>
+      </tbody>
+    </table>
   </div>
   <div class="card-footer">
     (...)
