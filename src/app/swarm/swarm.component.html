@@ -5,10 +5,45 @@
         Kontrolowane urządzenia
       </div>
       <div class="card-body">
-        (tabelka)
+        <table class="table table-striped table-hover">
+          <thead>
+          <tr>
+            <th class="w-30">MAC</th>
+            <th class="w-10">name</th>
+            <th class="w-10">nameA</th>
+            <th class="w-10">nameB</th>
+            <th class="w-10">nameC</th>
+            <th class="w-10">do it</th>
+          </tr>
+          </thead>
+          <tbody>
+          <!--tu jest pętla po elemnetach tablicy devices-->
+          <tr *ngFor="let d of devices">
+            <td>
+              {{d.macAddress}}
+            </td>
+            <td>
+              {{d.name}}
+            </td>
+            <td>
+              {{d.nameA}}
+            </td>
+            <td>
+              {{d.nameB}}
+            </td>
+            <td>
+              {{d.nameC}}
+            </td>
+            <td>
+              save
+            </td>
+
+          </tr>
+          </tbody>
+        </table>
       </div>
       <div class="card-footer">
-        (podsumowanie)
+        (podsumowanie) {{devices}}
       </div>
 
     </div>
