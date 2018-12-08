@@ -8,13 +8,15 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { NowyComponent } from './nowy/nowy.component';
+import { SwarmComponent } from './swarm/swarm.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopbarComponent,
     DashboardComponent,
-    NowyComponent
+    NowyComponent,
+    SwarmComponent
   ],
   imports: [
     BrowserModule,

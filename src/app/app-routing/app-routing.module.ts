@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from '../dashboard/dashboard.component';
+import {SwarmComponent} from '../swarm/swarm.component';
 
 /**
  * Generation by:
@@ -10,8 +11,8 @@ import {DashboardComponent} from '../dashboard/dashboard.component';
 
 const myroutes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'chat', component: DashboardComponent},
-  {path: '', redirectTo: '/chat', pathMatch: 'full'}
+  {path: 'swarm', component: SwarmComponent},
+  {path: '', redirectTo: '/swarm', pathMatch: 'full'}
 ];
 
 
