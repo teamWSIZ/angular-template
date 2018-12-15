@@ -10,21 +10,21 @@
         <table class="table table-sm table-hover">
           <thead>
           <tr>
-            <th class="w-30">MAC</th>
-            <th class="w-30">name</th>
-            <th class="w-15">nameA</th>
-            <th class="w-15">nameB</th>
-            <th class="w-15">nameC</th>
-            <th class="w-15">do it
-              <i class="fab fa-lg fa-gripfire mr-2 text-warning" (click)="warn=!warn"></i>
-
-            </th>
+            <td class="w-40">MAC</td>
+            <td class="w-10">name</td>
+            <td class="w-10">nameA</td>
+            <td class="w-10">nameB</td>
+            <td class="w-10">nameC</td>
+            <td class="w-15">
+              <i class="fas fa-lg fa-exclamation-triangle  text-warning" (click)="warn=!warn"
+              title="Włącz akcje niebezpieczne"></i>
+            </td>
           </tr>
           </thead>
           <tbody>
           <!--tu jest pętla po elemnetach tablicy devices-->
           <tr *ngFor="let d of devices">
-            <td>
+            <td class="align-middle ">
               {{d.macAddress}}
             </td>
             <td>
@@ -40,20 +40,21 @@
             <td>
               <input type="text" class="form-control"  [(ngModel)]="d.nameC">
             </td>
-            <td>
-              <i class="far fa-lg fa-save mr-2" (click)="saveDevice(d)"></i>
-              <i class="far fa-lg fa-trash-alt text-danger" *ngIf="warn"></i>
+            <td class="align-middle">
+              <i class="far fa-lg fa-save mr-2 clickable" (click)="saveDevice(d)"></i>
+              <i class="far fa-lg fa-trash-alt text-danger" *ngIf="warn" (click)="deleteDevice(d)"></i>
             </td>
-
           </tr>
           </tbody>
         </table>
+        <div class="row">
+          <span class="col-md-4"></span>
+          <input type="text" class="form-control col-md-4 mr-2" placeholder="adres MAC"  [(ngModel)]="newMAC">
+          <button class="btn btn-outline-info col-md-3" (click)="addMAC()">Dodaj MAC</button>
+        </div>
       </div>
       <div class="card-footer ">
-        <div class="row">
-          <input type="text" class="form-control col-md-9"  [(ngModel)]="newMAC">
-          <button class="btn btn-outline-info col-md-3">Dodaj MAC</button>
-        </div>
+
       </div>
     </div>
   </div>
