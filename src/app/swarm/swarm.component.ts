@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Device} from '../model/device';
 import {HttpClient, HttpParams} from '@angular/common/http';
+import {Alert} from '../model/alert';
 
 @Component({
   selector: 'app-swarm',
@@ -12,11 +13,16 @@ export class SwarmComponent implements OnInit {
   mainUrl = 'https://10.10.0.55:7700';
   warn= false;
   newMAC: string;
+  alerty: Alert[];
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.reloadDevices();
+    this.alerty = [
+      {title:'AAA', text:'Lorem ipsum'},
+      {title:'BBB', text:'Very Important Message'}
+    ]
   }
 
   reloadDevices() {
@@ -56,6 +62,7 @@ export class SwarmComponent implements OnInit {
     d.nameB = 'humi';
     d.nameC = 'wifi';
     this.devices.push(d);
+    this.alerty.push({title:'Dodano urządzenie', text:'MAC nowego urządzenia to ' + this.newMAC})
   }
 
   deleteDevice(d: Device) {
