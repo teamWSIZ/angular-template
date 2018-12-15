@@ -1,4 +1,22 @@
+
+
 <div class="row">
+  <div class="col-md-12">
+
+    <div [className]="'alert alert-dismissible alert-success'"
+         *ngFor="let a of alerts">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>{{a.title}}</strong> {{a.message}}
+    </div>
+
+    <p>Elementów w tabeli alertów: {{alerts.length}}</p>
+
+  </div>
+</div>
+
+<div class="row">
+
+
   <div class="col-md-1">
   </div>
   <div class="col-md-10 ">

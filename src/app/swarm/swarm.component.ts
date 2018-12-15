@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Device} from '../model/device';
 import {HttpClient, HttpParams} from '@angular/common/http';
+import {Alert} from "../model/alert";
 
 @Component({
   selector: 'app-swarm',
@@ -12,11 +13,21 @@ export class SwarmComponent implements OnInit {
   mainUrl = 'https://10.10.0.55:7700';
   warn= false;
   newMAC: string;
+  alerts: Alert[];
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.reloadDevices();
+    this.alerts = [
+      {title:'Nowy mac', message: 'Dodano nowe urządzenie AA', type: 'alert-success'},
+      {title:'Nowy mac', message: 'Dodano nowe urządzenie BB', type: 'alert-success'},
+      {title:'Nowy mac', message: 'Dodano nowe urządzenie CC', type: 'alert-success'},
+    ]
+  }
+
+  addAlert(a : Alert) {
+    this.alerts.push(a);
   }
 
   reloadDevices() {
@@ -51,11 +62,18 @@ export class SwarmComponent implements OnInit {
   //adds device with mac=newMAC to the table (only "Save" uploads to server)
   addMAC() {
     let d = new Device();
+    if (this.newMAC.length<4) {
+      this.addAlert({title: 'Nieprawidłowy adres MAC', message: ' (adres MAC ma mieć >=4 znaki)',
+        type: 'warning'});
+      return;
+    }
     d.macAddress = this.newMAC;
     d.nameA = 'temp';
     d.nameB = 'humi';
     d.nameC = 'wifi';
     this.devices.push(d);
+
+    this.addAlert({title: 'Dodano urządzenie', message: ' dodano MAC ' + this.newMAC, type: 'success'});
   }
 
   deleteDevice(d: Device) {
