@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Device} from '../model/device';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Alert} from "../model/alert";
+import {AlertbarComponent} from "../alertbar/alertbar.component";
 
 @Component({
   selector: 'app-swarm',
@@ -13,21 +14,14 @@ export class SwarmComponent implements OnInit {
   mainUrl = 'https://10.10.0.55:7700';
   warn= false;
   newMAC: string;
-  alerts: Alert[];
+  @ViewChild(AlertbarComponent)
+  alertbar: AlertbarComponent;
+
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.reloadDevices();
-    this.alerts = [
-      {title:'Nowy mac', message: 'Dodano nowe urządzenie AA', type: 'alert-success'},
-      {title:'Nowy mac', message: 'Dodano nowe urządzenie BB', type: 'alert-success'},
-      {title:'Nowy mac', message: 'Dodano nowe urządzenie CC', type: 'alert-success'},
-    ]
-  }
-
-  addAlert(a : Alert) {
-    this.alerts.push(a);
   }
 
   reloadDevices() {
@@ -63,8 +57,7 @@ export class SwarmComponent implements OnInit {
   addMAC() {
     let d = new Device();
     if (this.newMAC.length<4) {
-      this.addAlert({title: 'Nieprawidłowy adres MAC', message: ' (adres MAC ma mieć >=4 znaki)',
-        type: 'warning'});
+      this.alertbar.addAlert('Zły MAC', this.newMAC, 'danger');
       return;
     }
     d.macAddress = this.newMAC;
@@ -73,7 +66,8 @@ export class SwarmComponent implements OnInit {
     d.nameC = 'wifi';
     this.devices.push(d);
 
-    this.addAlert({title: 'Dodano urządzenie', message: ' dodano MAC ' + this.newMAC, type: 'success'});
+    this.alertbar.addAlert('Dodano MAC',
+      'Skonfiguruj nazwę, i zapisz by zmiany zostały uwzględnione', 'success');
   }
 
   deleteDevice(d: Device) {

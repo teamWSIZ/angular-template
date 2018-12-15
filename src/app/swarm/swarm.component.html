@@ -1,22 +1,7 @@
 
+<app-alertbar></app-alertbar>
 
 <div class="row">
-  <div class="col-md-12">
-
-    <div [className]="'alert alert-dismissible alert-success'"
-         *ngFor="let a of alerts">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>{{a.title}}</strong> {{a.message}}
-    </div>
-
-    <p>Elementów w tabeli alertów: {{alerts.length}}</p>
-
-  </div>
-</div>
-
-<div class="row">
-
-
   <div class="col-md-1">
   </div>
   <div class="col-md-10 ">
@@ -28,12 +13,12 @@
         <table class="table table-sm table-hover">
           <thead>
           <tr>
-            <td class="w-40">MAC</td>
-            <td class="w-10">name</td>
-            <td class="w-10">nameA</td>
-            <td class="w-10">nameB</td>
-            <td class="w-10">nameC</td>
-            <td class="w-15">
+            <td width="30%">MAC</td>
+            <td width="15%">name</td>
+            <td width="15%">nameA</td>
+            <td width="15%">nameB</td>
+            <td width="15%">nameC</td>
+            <td width="10%">
               <i class="fas fa-lg fa-exclamation-triangle  text-warning" (click)="warn=!warn"
               title="Włącz akcje niebezpieczne"></i>
             </td>
@@ -45,19 +30,12 @@
             <td class="align-middle ">
               {{d.macAddress}}
             </td>
-            <td>
-              <input type="text" class="form-control"  [(ngModel)]="d.name">
-            </td>
-            <td>
-              <input type="text" class="form-control"  [(ngModel)]="d.nameA">
-            </td>
-            <td>
-              <input type="text" class="form-control"  [(ngModel)]="d.nameB">
 
-            </td>
-            <td>
-              <input type="text" class="form-control"  [(ngModel)]="d.nameC">
-            </td>
+            <td><input type="text" class="form-control"  [(ngModel)]="d.name"></td>
+            <td><input type="text" class="form-control"  [(ngModel)]="d.nameA"></td>
+            <td><input type="text" class="form-control"  [(ngModel)]="d.nameB"></td>
+            <td><input type="text" class="form-control"  [(ngModel)]="d.nameC"></td>
+
             <td class="align-middle">
               <i class="far fa-lg fa-save mr-2 clickable" (click)="saveDevice(d)"></i>
               <i class="far fa-lg fa-trash-alt text-danger" *ngIf="warn" (click)="deleteDevice(d)"></i>
