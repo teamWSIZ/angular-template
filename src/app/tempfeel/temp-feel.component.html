@@ -12,12 +12,16 @@
       <div class="card-body">
         <div class="row">
           <div class="col-md-4">
-            <select [(ngModel)]="selectedRoom">
+            <select [(ngModel)]="selectedRoom" class="form-control">
               <option [ngValue]="r" *ngFor="let r of rooms"> {{r}}</option>
             </select>
           </div>
-          <button class="btn btn-outline-danger col-md-4" (click)="tempTooHigh()">Dodaj MAC</button>
-          <button class="btn btn-outline-primary col-md-4" (click)="tempTooLow()">Dodaj MAC</button>
+
+          <button class="btn btn-outline-danger col-md-4" (click)="tempTooHigh()">
+            <i class="far fa-sun fa-8x"></i></button>
+          <button class="btn btn-outline-primary col-md-4" (click)="tempTooLow()">
+            <i class="far fa-snowflake fa-8x"></i>
+          </button>
         </div>
       </div>
       <div class="card-footer ">
