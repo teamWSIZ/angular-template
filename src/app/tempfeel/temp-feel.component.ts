@@ -40,6 +40,7 @@ export class TempFeelComponent implements OnInit {
       .subscribe(value => {
         console.log('Wynik zapisano w systemie');
       });
+    this.alertbar.addAlert('Dzięki za info..', '', 'success');
   }
 
 }
