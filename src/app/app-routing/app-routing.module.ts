@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {SwarmComponent} from '../swarm/swarm.component';
+import {TempFeelComponent} from '../tempfeel/temp-feel.component';
 
 /**
  * Generation by:
@@ -8,8 +8,8 @@ import {SwarmComponent} from '../swarm/swarm.component';
  */
 
 const myroutes: Routes = [
-  {path: 'swarm', component: SwarmComponent},
-  {path: '', redirectTo: '/swarm', pathMatch: 'full'}
+  {path: 'feel', component: TempFeelComponent},
+  {path: '', redirectTo: '/feel', pathMatch: 'full'}
 ];
 
 
