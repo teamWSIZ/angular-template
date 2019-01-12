@@ -1,7 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {Device} from '../model/device';
-import {HttpClient, HttpParams} from '@angular/common/http';
-import {Alert} from "../model/alert";
+import {HttpClient} from '@angular/common/http';
 import {AlertbarComponent} from "../alertbar/alertbar.component";
 import {GenericResponse} from "../model/genericresponse";
 
@@ -12,7 +10,7 @@ import {GenericResponse} from "../model/genericresponse";
 })
 export class TempFeelComponent implements OnInit {
   rooms: string[];
-  mainUrl = 'http://10.10.0.55:8888';
+  mainUrl = 'http://doha.wsi.edu.pl:8050';
   @ViewChild(AlertbarComponent)
   alertbar: AlertbarComponent;
   selectedRoom: string;
@@ -21,7 +19,17 @@ export class TempFeelComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.rooms = ["Sala41", "Sala42", "Sala22", "Sala21"];
+    this.loadRooms();
+
+  }
+
+  private loadRooms() {
+    const url = this.mainUrl + '/rooms';
+    this.http.get<string[]>(url)
+      .subscribe(value => {
+        this.rooms = value;
+        this.rooms.sort();
+      });
   }
 
 
@@ -35,7 +43,7 @@ export class TempFeelComponent implements OnInit {
   }
 
   vote(value : number, room : string) {
-    const url = this.mainUrl + '/vote?room=' + room + '&value=' + value;
+    const url = this.mainUrl + '/vote/' + room + '/' + value;
     this.http.get<GenericResponse>(url)
       .subscribe(value => {
         console.log('Wynik zapisano w systemie');
