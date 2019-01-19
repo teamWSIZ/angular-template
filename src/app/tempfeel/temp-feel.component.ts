@@ -20,13 +20,13 @@ export class TempFeelComponent implements OnInit {
   selectedAlias: string;
   selectedTestId: number;
   items: Item[];
+  isReversed = false;
 
 
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.loadRooms();
 
   }
 
@@ -35,19 +35,15 @@ export class TempFeelComponent implements OnInit {
     this.http.get<Test>(url)
       .subscribe(value => {
         this.selectedTestId = value.testid;
-        this.items = value.items;
+        if (this.isReversed) {
+          this.items = value.items;
+        } else {
+          this.items = this.revertItems(value.items);
+        }
       });
   }
 
 
-  private loadRooms() {
-    const url = this.mainUrl + '/rooms';
-    this.http.get<string[]>(url)
-      .subscribe(value => {
-        this.rooms = value;
-        this.rooms.sort();
-      });
-  }
 
 
   tempTooHigh() {
@@ -68,8 +64,12 @@ export class TempFeelComponent implements OnInit {
     this.alertbar.addAlert('Dzięki za info..', '', 'success');
   }
 
-  filterIncomes(dane: any) {
-
+  revertItems(items : Item[]) {
+    let result = [];
+    for(let i of items) {
+      result.push(new Item(i.to, i.from));
+    }
+    return result;
   }
 
   all(items: Item[]) {

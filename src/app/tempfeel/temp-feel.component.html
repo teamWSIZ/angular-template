@@ -16,7 +16,7 @@
             <input type="text" class="form-control col-10 float-right" placeholder="alias testu"  [(ngModel)]="selectedAlias">
           </div>
           <div class="col-sm-4 ">
-            <input type="checkbox" class="form-check-input float-right" ngModel="isReversed">Test odwrotny
+            <input type="checkbox" class="form-check-input float-right" [(ngModel)]="isReversed">Test odwrotny
           </div>
           <div class="col-sm-4 ">
             <button class="btn btn-outline-info" (click)="loadTest(selectedAlias)">Uruchom test</button>
