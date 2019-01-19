@@ -2,6 +2,8 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AlertbarComponent} from "../alertbar/alertbar.component";
 import {GenericResponse} from "../model/genericresponse";
+import {Test} from "../model/test";
+import {Item} from "../model/item";
 
 @Component({
   selector: 'app-swarm',
@@ -10,10 +12,15 @@ import {GenericResponse} from "../model/genericresponse";
 })
 export class TempFeelComponent implements OnInit {
   rooms: string[];
-  mainUrl = 'http://doha.wsi.edu.pl:8050';
+  mainUrl = 'http://basra.wsi.edu.pl:1111';
   @ViewChild(AlertbarComponent)
   alertbar: AlertbarComponent;
   selectedRoom: string;
+
+  selectedAlias: string;
+  selectedTestId: number;
+  items: Item[];
+
 
 
   constructor(private http: HttpClient) { }
@@ -22,6 +29,16 @@ export class TempFeelComponent implements OnInit {
     this.loadRooms();
 
   }
+
+  private loadTest(alias: string) {
+    const url = this.mainUrl + '/tests?alias=' + alias;
+    this.http.get<Test>(url)
+      .subscribe(value => {
+        this.selectedTestId = value.testid;
+        this.items = value.items;
+      });
+  }
+
 
   private loadRooms() {
     const url = this.mainUrl + '/rooms';
@@ -51,4 +68,11 @@ export class TempFeelComponent implements OnInit {
     this.alertbar.addAlert('Dzięki za info..', '', 'success');
   }
 
+  filterIncomes(dane: any) {
+
+  }
+
+  all(items: Item[]) {
+    return JSON.stringify(items);
+  }
 }

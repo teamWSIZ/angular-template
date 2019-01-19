@@ -12,47 +12,47 @@
       </div>
       <div class="card-body">
         <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4"></div>
-          <div class="col-md-4"></div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="card mt-2">
-      <div class="card-header h3">
-        Reklamacje termiczne..
-        <i class="fas fa-sync-alt clickable float-sm-right"></i>
-      </div>
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-4">
-            <select [(ngModel)]="selectedRoom" class="form-control">
-              <option [ngValue]="r" *ngFor="let r of rooms"> {{r}}</option>
-            </select>
+          <div class="col-sm-4 ">
+            <input type="text" class="form-control col-10 float-right" placeholder="alias testu"  [(ngModel)]="selectedAlias">
           </div>
-
-          <button class="btn btn-outline-warning col-md-4" (click)="tempTooHigh()">
-            <img src="assets/img/heater.svg" class="img-fluid">
-          </button>
-          <button class="btn btn-outline-info col-md-4" (click)="tempTooLow()">
-            <img src="assets/img/winter.svg" class="img-fluid">
-          </button>
+          <div class="col-sm-4 ">
+            <input type="checkbox" class="form-check-input float-right" ngModel="isReversed">Test odwrotny
+          </div>
+          <div class="col-sm-4 ">
+            <button class="btn btn-outline-info" (click)="loadTest(selectedAlias)">Uruchom test</button>
+          </div>
         </div>
       </div>
-      <div class="card-footer ">
-        (..)
-      </div>
-
-
-
-
     </div>
+
+
+
+  <div class="card mt-2">
+    <div class="card-header h3">
+      Test
+      <i class="fas fa-sync-alt clickable float-sm-right"></i>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-4">
+          {{fullTest}}
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
+    </div>
+    <div class="card-footer ">
+      {{all(items)}}
+    </div>
+
+
   </div>
-  <div class="col-md-1">
+
+
   </div>
 </div>
-<hr/>
-<span class="text-right text-small">Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></span>
+<div class="col-md-1">
+</div>
 
